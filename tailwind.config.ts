@@ -8,11 +8,13 @@ export default {
     container: {
       center: true,
       padding: "2rem",
-      screens: {
-        "2xl": "1400px",
-      },
+      screens: { "2xl": "1400px" },
     },
     extend: {
+      fontFamily: {
+        serif: ["DM Serif Display", "Georgia", "serif"],
+        sans: ["Inter", "system-ui", "sans-serif"],
+      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
@@ -47,6 +49,26 @@ export default {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
+        chat: {
+          "user-bg": "hsl(var(--chat-user-bg))",
+          "user-fg": "hsl(var(--chat-user-fg))",
+          "bot-bg":  "hsl(var(--chat-bot-bg))",
+          "bot-fg":  "hsl(var(--chat-bot-fg))",
+        },
+        crisis: {
+          bg:     "hsl(var(--crisis-bg))",
+          border: "hsl(var(--crisis-border))",
+          text:   "hsl(var(--crisis-text))",
+        },
+        emotion: {
+          joy:      "hsl(var(--emotion-joy))",
+          sadness:  "hsl(var(--emotion-sadness))",
+          fear:     "hsl(var(--emotion-fear))",
+          anger:    "hsl(var(--emotion-anger))",
+          neutral:  "hsl(var(--emotion-neutral))",
+          surprise: "hsl(var(--emotion-surprise))",
+          disgust:  "hsl(var(--emotion-disgust))",
+        },
         sidebar: {
           DEFAULT: "hsl(var(--sidebar-background))",
           foreground: "hsl(var(--sidebar-foreground))",
@@ -62,28 +84,21 @@ export default {
         lg: "var(--radius)",
         md: "calc(var(--radius) - 2px)",
         sm: "calc(var(--radius) - 4px)",
+        xl: "1.25rem",
+        "2xl": "1.5rem",
+      },
+      boxShadow: {
+        soft: "var(--shadow-soft)",
+        card: "var(--shadow-card)",
+        "chat-card": "0 8px 32px 0 hsl(172 32% 40% / 0.12)",
       },
       keyframes: {
-        "accordion-down": {
-          from: {
-            height: "0",
-          },
-          to: {
-            height: "var(--radix-accordion-content-height)",
-          },
-        },
-        "accordion-up": {
-          from: {
-            height: "var(--radix-accordion-content-height)",
-          },
-          to: {
-            height: "0",
-          },
-        },
+        "accordion-down": { from: { height: "0" }, to: { height: "var(--radix-accordion-content-height)" } },
+        "accordion-up":   { from: { height: "var(--radix-accordion-content-height)" }, to: { height: "0" } },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
-        "accordion-up": "accordion-up 0.2s ease-out",
+        "accordion-up":   "accordion-up 0.2s ease-out",
       },
     },
   },
